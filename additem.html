@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="viewport" content="width=device-width, initial-scale=1"> 
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <style src="file:///D:/reformed/css/ui.reformed.css">
+  input[type=text]{
+    border: none;
+    border-bottom: 2px solid red;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+  }
+   </style>
+<script src="file:///D:/jquery-ui-1.8.7.custom.css"></script>
+  </head>
+  
+  <div class="reformed-form">
+	<form method="post" name="Homework" id="Homework" action="/app.html">
+		<dl>
+			<dt>
+				<label for="Homework">Title</label>
+			</dt>
+			<dd><input type="text" id="Homework" name="Homework" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="Date">Due Date</label>
+			</dt>
+			<dd><input type="text" id="Date" class="datepicker date" name="Date" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="Description">Description</label>
+			</dt>
+			<dd><textarea id="Description" class="alphanumerichyphen" name="Description" rows="5" cols="50">
+</textarea></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="Class">Class</label>
+			</dt>
+			<dd><input type="text" id="Class" name="Class" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="Type">Type of Homework</label>
+			</dt>
+			<dd>
+				<ul>
+					<li><input type="radio" id="Type" name="Type" value="Worksheet" />
+						<label>Worksheet</label>
+					</li>
+					<li><input type="radio" id="Type" name="Type" value="Classroom" />
+						<label>Google Classroom</label>
+					</li>
+					<li><input type="radio" id="Type" name="Type" value="Digits" />
+						<label>Digits</label>
+					</li>
+					<li><input type="radio" id="Type" name="Type" value="Paper" />
+						<label>Other Paper</label>
+					</li>
+					<li><input type="radio" id="Type" name="Type" value="Computer" />
+						<label>Other Computer</label>
+					</li>
+				</ul>
+						</dd>
+		</dl>
+		<div id="submit_buttons">
+			<button type="reset">Reset</button>
+			<button type="submit">Submit</button>
+		</div>
+		</form>
+</div>
