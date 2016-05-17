@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<head>
+<script>
+$('.has-event').click(function(){
+  $(this).append("<div class='pulse'></div>")
+  .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+    $('.pulse').remove();
+  });
+ $(".event").addClass("active");
+ $(".cal").removeClass("active");
+});
+$(".close").click(function(){
+  $(this).append("<div class='pulse dark'></div>")
+  .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+    $('.pulse').remove();
+  });
+  $(".event").removeClass("active");
+  $(".cal").addClass("active");
+})</script><style>
+html {
+  background: #EFF1EB;
+}
+html, body {
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  display:flex;
+}
+.wrapper {
+  margin:auto;
+  width:300px;
+  height:300px;
+  overflow:hidden;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.1), 0 3px 3px 0 rgba(0,0,0,.05);
+}
+.row {
+  margin-bottom:16px;
+  &:after {
+    content:'';
+    display:block;
+    clear:both;
+    height:0;
+  }
+}
+
+.event {
+  background:#778E48;
+  height:300px;
+  transform:translateY(-100%);
+  width:100%;
+  transition: transform .38s ease-out;
+  transition-delay:.05s;
+  border-radius:2px;
+  overflow:hidden;
+}
+.event-info {
+  position: relative;
+  top:35px;
+}
+.event-content {
+  padding:20px;
+}
+p {
+  color:#EFF1EB;
+  font-family:roboto;
+  font-size:16px;
+  line-height:1.6;
+  margin-top:0;
+  margin-bottom:10px;
+}
+strong {
+  text-transform:uppercase;
+  font-size:14px;
+  letter-spacing:.03em;
+}
+
+.event-title {
+  margin-top:0;
+  margin-bottom:10px;
+  font-family:roboto;
+  text-transform:uppercase;
+  color:white;
+  font-size:1.3rem;
+}
+.close {
+  position: relative;
+  cursor:pointer;
+  background:#657146;
+  height:40px;
+  width:40px;
+  border-radius:50%;
+  float:right;
+  .fa-times {
+    width:100%;
+    text-align:center;
+    display:block;
+    &:before {
+      color:white;
+      font-size:1.2em;
+      line-height:40px;
+      text-align:center;
+    }
+  }
+}
+.event.active {
+  transform:translateY(0);
+}
+.cal.active {
+   transform:translateY(-100%);
+}
+.cal {
+  transition: transform .38s ease-out;
+  transition-delay:.05s;
+  background:white;
+  padding:10px;
+  border-radius:3px;
+  width:100%;
+}
+th {
+  font-family:roboto;
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#778E48;
+  font-size:1.3rem;
+}
+td {
+  padding:10px;
+  font-family:roboto; 
+  text-align:center;
+  
+}
+.has-event {
+  background: #778E48;
+  border-radius:50%;
+  color:white;
+  cursor:pointer;
+  position: relative;
+  z-index:0;
+
+}
+.pulse {
+  position:absolute;
+  background: #778E48;
+  height:40px;
+  width:40px;
+  left:0;
+  top:0;
+  border-radius:50%;
+  animation:pulse .28s ease-out;
+  animation-fill-mode: forward;
+  opacity:0;
+  z-index:-1;
+}
+.pulse.dark {
+  background:#657146;
+}
+@keyframes pulse {
+  0% {
+    transform:scale(1);
+    opacity:1;
+  }
+  90% {
+    transform:scale(5);
+    opacity:0;
+  }
+}
+</style></head>
+<body><div class="wrapper">
+  <div class="event">
+    <div class="event-content">
+      <div class="row">
+        <div class="close"><i class="fa fa-times"></i></div>
+      </div>
+      <div class="event-info">
+        <h2 class="event-title">Event Title</h2>
+        <p class="event-description">Cool event description thing here. How neat is that? That's pretty neat.</p>
+        <p class="event-details"><strong>Date:</strong> Whenevs
+          <br><strong>Location:</strong> Cool Place
+          <br>
+          <strong>Time:</strong> 12pm – ???</p>
+      </div>
+    </div>
+  </div>
+  <table class="cal active">
+    <tr>
+      <th colspan="7">Month</th>
+    </tr>
+    <tr>
+      <td><b>S</b></td>
+      <td><b>M</b></td>
+      <td><b>T</b></td>
+      <td><b>W</b></td>
+      <td><b>T</b></td>
+      <td><b>F</b></td>
+      <td><b>S</b></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td class="has-event">
+</div>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+<td>19</td>
+<td>20</td>
+<td>21</td>
+</tr>
+<tr>
+  <td>22</td>
+  <td>23</td>
+  <td>24</td>
+  <td>25</td>
+  <td>26</td>
+  <td>27</td>
+  <td>28</td>
+</tr>
+<tr>
+  <td>29</td>
+  <td>30</td>
+  <td>31</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+</table>
+</div></body>
